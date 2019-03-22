@@ -30,8 +30,9 @@ class _MyAppState extends State<MyApp> {
             margin: EdgeInsets.all(10.0),
             child: RaisedButton(
               onPressed: () {
-                _product.add('Robot Food Testing.');
-                print(_product);
+                setState(() {
+                  _product.add('Robot Food Testing.');
+                });  
               },
               child: Text('Add Product'),
             ),
