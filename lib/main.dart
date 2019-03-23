@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './manager.dart';
+
 /**
  * Author: Kelyn Paul Njeri.
  * Date: 21st March 2019
@@ -8,16 +10,7 @@ import 'package:flutter/material.dart';
 /**Create main function that will act run my whole app. */
 void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return _MyAppState();
-  }
-}
-
-class _MyAppState extends State<MyApp> {
-  List<String> _product = ['Food Tester'];
+class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,33 +18,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Product Manager'),
         ),
-        body: Column(children: [
-          Container(
-            margin: EdgeInsets.all(10.0),
-            child: RaisedButton(
-              onPressed: () {
-                setState(() {
-                  _product.add('Robot Food Testing.');
-                });  
-              },
-              child: Text('Add Product'),
-            ),
-          ),
-          Column(
-            children: _product
-                .map(
-                  (element) => Card(
-                        child: Column(
-                          children: <Widget>[
-                            Image.asset('assets/cupcakes.jpg'),
-                            Text(element)
-                          ],
-                        ),
-                      ),
-                )
-                .toList(),
-          )
-        ]),
+        body: ProductManager('Food Tester'),
       ),
     );
   }
