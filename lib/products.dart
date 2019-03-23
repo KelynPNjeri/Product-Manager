@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class Products extends StatelessWidget {
   final List<String> products;
   // Product Constructor.
-  Products(this.products){
+  Products([this.products = const []]){
     print('[Products Widget] Contructor');
   }
 

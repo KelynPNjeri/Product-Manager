@@ -7,7 +7,7 @@ import './manager.dart';
  * Date: 21st March 2019
  */
 
-/**Create main function that will act run my whole app. */
+/// Create main function that will act run my whole app. 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Product Manager'),
         ),
-        body: ProductManager('Food Tester'),
+        body: ProductManager(initialProduct: 'Food Tester',),
       ),
     );
   }

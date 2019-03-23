@@ -4,7 +4,7 @@ import './products.dart';
 
 class ProductManager extends StatefulWidget {
   final String initialProduct;
-  ProductManager(this.initialProduct) {
+  ProductManager({this.initialProduct = 'New Robot Test'}) {
     print('[Product Manager State] Constructor');
   }
   @override
@@ -29,7 +29,6 @@ class _ProductManager extends State<ProductManager> {
   @override
   void didUpdateWidget(ProductManager oldWidget) {
     print('[Product Manager State] didUpdateWidget()');
-    // TODO: implement didUpdateWidget
     super.didUpdateWidget(oldWidget);
   }
 
