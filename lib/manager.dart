@@ -4,29 +4,45 @@ import './products.dart';
 
 class ProductManager extends StatefulWidget {
   final String initialProduct;
-  ProductManager(this.initialProduct);
+  ProductManager(this.initialProduct) {
+    print('[Product Manager State] Constructor');
+  }
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
+    print('[Products Manager State] createState()');
     return _ProductManager();
   }
 }
 
 class _ProductManager extends State<ProductManager> {
-  List<String> _product = ['Food Tester'];
+  List<String> _product = [];
+
+  // Initializes state.
   @override
   void initState() {
     _product.add(widget.initialProduct);
     super.initState();
+    print('[Product Manager State] initState()');
+  }
+
+  // Called whenever app gets new external data.
+  @override
+  void didUpdateWidget(ProductManager oldWidget) {
+    print('[Product Manager State] didUpdateWidget()');
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
   }
 
   @override
   Widget build(BuildContext context) {
+    print('[Product Manager Widget] build()');
     return Column(
       children: [
         Container(
           margin: EdgeInsets.all(10.0),
           child: RaisedButton(
+            color: Colors.teal,
+            textColor: Colors.white,
             onPressed: () {
               setState(() {
                 _product.add('Robot Food Testing.');
